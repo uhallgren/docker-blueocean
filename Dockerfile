@@ -1,4 +1,4 @@
-FROM jenkinsci/blueocean:1.0.1
+FROM jenkinsci/blueocean:1.4.2
 
 USER root
 
@@ -11,4 +11,6 @@ RUN apk add --update shadow \
     && groupadd -g 50 staff \
     && usermod -a -G staff jenkins
 
-USER jenkins
+
+#RUN chmod og+rw /run/docker.sock
+#USER jenkins
